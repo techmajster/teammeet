@@ -1,3 +1,3 @@
 {
-  "extends": ["@teammeet/eslint-config"]
+  "extends": ["next/core-web-vitals"]
 }
