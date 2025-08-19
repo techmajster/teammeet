@@ -1,0 +1,37 @@
+import { NextResponse, type NextRequest } from 'next/server'
+
+export async function middleware(request: NextRequest) {
+  // Check for Supabase auth cookies directly
+  const accessToken = request.cookies.get('sb-ticyorjxcnxixjpsrfax-auth-token')?.value
+  const refreshToken = request.cookies.get('sb-ticyorjxcnxixjpsrfax-auth-token-code-verifier')?.value
+  
+  const isAuthenticated = !!(accessToken || refreshToken)
+  
+  // Protected routes that require authentication
+  const protectedPaths = ['/dashboard', '/rooms']
+  const isProtectedPath = protectedPaths.some(path => 
+    request.nextUrl.pathname.startsWith(path)
+  )
+  
+  // Redirect to login if trying to access protected route without auth
+  if (isProtectedPath && !isAuthenticated) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/auth/login'
+    return NextResponse.redirect(url)
+  }
+  
+  // Redirect to dashboard if authenticated user visits login page
+  if (request.nextUrl.pathname === '/auth/login' && isAuthenticated) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
+    return NextResponse.redirect(url)
+  }
+  
+  return NextResponse.next()
+}
+
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
+}

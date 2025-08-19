@@ -1,0 +1,41 @@
+
+> web@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.15
+  - Environments: .env.local
+  - Experiments (use with caution):
+    · turbo
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (108kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+ ⨯ ESLint: Failed to load config "@typescript-eslint/recommended" to extend from. Referenced from: /Users/simon/Desktop/video-conf-app/packages/eslint-config/index.js
+   Collecting page data ...
+   Generating static pages (0/8) ...
+   Generating static pages (2/8) 
+   Generating static pages (4/8) 
+   Generating static pages (6/8) 
+ ✓ Generating static pages (8/8)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    142 B          87.3 kB
+├ ○ /_not-found                          872 B            88 kB
+├ ○ /auth/auth-code-error                142 B          87.3 kB
+├ ƒ /auth/callback                       0 B                0 B
+├ ○ /auth/login                          1.28 kB         131 kB
+└ ƒ /dashboard                           953 B           131 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/1dd3208c-22bf6aef9e09991c.js  53.6 kB
+  ├ chunks/528-a6fb87cec637ab43.js       31.6 kB
+  └ other shared chunks (total)          1.92 kB
+
+
+ƒ Middleware                             62.4 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
