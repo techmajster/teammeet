@@ -88,7 +88,7 @@ export default function DeleteRoomButton({ room }: DeleteRoomButtonProps) {
           <AlertDialogTitle>Delete Room</AlertDialogTitle>
           <AlertDialogDescription className="space-y-3">
             <p>
-              Are you sure you want to permanently delete <strong>"{room.name}"</strong>?
+              Are you sure you want to permanently delete <strong>&quot;{room.name}&quot;</strong>?
             </p>
             <p>This action will:</p>
             <ul className="list-disc pl-6 space-y-1">
@@ -115,7 +115,7 @@ export default function DeleteRoomButton({ room }: DeleteRoomButtonProps) {
           />
           {!isConfirmationValid && confirmationText && (
             <p className="text-sm text-red-500">
-              Please type "delete {room.name}" exactly as shown
+              Please type &quot;delete {room.name}&quot; exactly as shown
             </p>
           )}
         </div>

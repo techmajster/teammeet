@@ -288,7 +288,7 @@ export default function ParticipantsList({
           <AlertDialogHeader>
             <AlertDialogTitle>Remove Participant</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to remove "{participantToRemove?.users?.name || 'this participant'}" from the room? 
+              Are you sure you want to remove &quot;{participantToRemove?.users?.name || 'this participant'}&quot; from the room? 
               They will no longer have access to this room.
             </AlertDialogDescription>
           </AlertDialogHeader>

@@ -3,6 +3,7 @@
 import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import Image from 'next/image'
 import type { User } from '@supabase/supabase-js'
 
 interface UserMenuProps {
@@ -33,9 +34,11 @@ export default function UserMenu({ user }: UserMenuProps) {
     <div className="flex items-center gap-4">
       <div className="flex items-center gap-3">
         {user.user_metadata.avatar_url && (
-          <img
+          <Image
             src={user.user_metadata.avatar_url}
-            alt={user.user_metadata.full_name || user.email}
+            alt={user.user_metadata.full_name || user.email || 'User avatar'}
+            width={32}
+            height={32}
             className="h-8 w-8 rounded-full"
           />
         )}

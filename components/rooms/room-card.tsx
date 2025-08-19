@@ -201,7 +201,7 @@ export default function RoomCard({ room }: RoomCardProps) {
           <AlertDialogHeader>
             <AlertDialogTitle>Delete Room</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete "{room.name}"? This action cannot be undone.
+              Are you sure you want to delete &quot;{room.name}&quot;? This action cannot be undone.
               All participants will be removed and any room data will be permanently lost.
             </AlertDialogDescription>
           </AlertDialogHeader>

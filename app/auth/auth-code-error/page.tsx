@@ -25,7 +25,7 @@ export default function AuthCodeErrorPage() {
             </h2>
             
             <p className="mt-2 text-sm text-gray-600">
-              Sorry, we couldn't sign you in. This could be due to:
+              Sorry, we couldn&apos;t sign you in. This could be due to:
             </p>
             
             <ul className="mt-4 text-left text-sm text-gray-600 space-y-1">

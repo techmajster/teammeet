@@ -149,7 +149,7 @@ export default function InviteParticipantDialog({ room }: InviteParticipantDialo
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Users className="h-5 w-5" />
-            Invite to "{room.name}"
+            Invite to &quot;{room.name}&quot;
           </DialogTitle>
           <DialogDescription>
             Add people to your room by sending email invitations or sharing a link.
